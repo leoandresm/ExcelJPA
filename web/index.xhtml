@@ -39,6 +39,15 @@
                     <p:ajax process="inputCodProf" update="inputCodProfMessage"/>
                 </p:inputText>
                 <p:message for="inputCodProf" id="inputCodProfMessage"/>
+                <p:outputLabel value="Ejemplo Listas" />
+                <p:selectOneMenu  id="ejemplo" value="#{estudianteController.itemsAvailableSelectOne}" var="item" >
+               
+                    <f:selectItem itemLabel="Seleccione uno" itemValue=""/>
+                    <f:selectItem itemLabel="#{item.ficha.estudianteList}" itemValue="#{estudianteController.estudianteActual.ficha}" />
+                    
+                    
+                </p:selectOneMenu>
+        
             </p:panelGrid>
             
             <p:commandButton id="save" process="@this panelCreate" update="datatableEstudiantes panelCreate" value="Guardar"
@@ -68,10 +77,10 @@
                     <h:outputText value="#{item.apellidos}"/>
                 </p:column>
                 <p:column headerText="Ficha" filterBy="#{item.ficha}" filterMatchMode="contains">
-                    <h:outputText value="#{item.ficha}"/>
+                    <h:outputText value="#{item.ficha.ficha}"/>
                 </p:column>
                 <p:column headerText="Código profesión" filterBy="#{item.codProf}" filterMatchMode="contains">
-                    <h:outputText value="#{item.codProf}"/>
+                    <h:outputText value="#{item.codProf.codProf}"/>
                 </p:column>
             </p:dataTable>
         </h:form>

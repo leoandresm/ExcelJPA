@@ -72,5 +72,13 @@ public class EstudianteController {
             }
         }
     }
+    
+     public List<Estudiante> getItemsAvailableSelectMany() {
+        return estudianteFacade.findAll();
+    }
+
+    public List<Estudiante> getItemsAvailableSelectOne() {
+        return estudianteFacade.findAll();
+    }
 
 }

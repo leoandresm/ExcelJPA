@@ -110,7 +110,7 @@ public class Ficha implements Serializable {
 
     @Override
     public String toString() {
-        return "com.example.jpa.entities.Ficha[ ficha=" + ficha + " ]";
+        return "No. " + getFicha();
     }
     
 }
